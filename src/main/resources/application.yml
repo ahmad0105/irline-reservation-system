@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: Airline Reservation System
+  datasource:
+    url: jdbc:postgresql://localhost:5432/airline_db
+    username: airline_user
+    password: airline_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+
+jwt:
+  # A secure 256-bit hex secret key for HMAC-SHA256
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expirationMs: 86400000 # 24 hours
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
